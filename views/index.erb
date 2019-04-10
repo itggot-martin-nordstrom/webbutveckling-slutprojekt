@@ -1,0 +1,14 @@
+
+<%
+    @data.each do |element|
+%>
+    <!-- element[0] nummer utan nollor -->
+    <!-- element[1] namn -->
+    <article>
+        <h3><%= element[1] %></h3>
+        <h3><%= numberExtender(element[0]) %></h3>
+        <a href="/pokemon/<%=element[0]%>"><button><%= element[1] %></button></a>
+    </article>
+<%
+    end
+%>
