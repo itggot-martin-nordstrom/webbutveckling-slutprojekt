@@ -1,0 +1,22 @@
+article style=("--article-bg: #{@data[0][4]};")
+  a href="/" 
+   button Back
+  h2 = @data[0][1]
+  h2 = numberExtender(@data[0][0])
+  .pokemon--intro
+  .section
+    h3.section--header Data
+    /! <haml_loud> @data[0][6]</haml_loud> är pokemon_data
+    p = @data[0][6]
+  .section
+    h3.section--header Origin
+    /! <haml_loud> @data[0][7]</haml_loud> är pokemon_origin
+    p = @data[0][7]
+  .section
+    h3.section--header Apperance
+    /! <haml_loud> @data[0][8]</haml_loud> är pokemon_apperance
+    p = @data[0][8]
+  .section
+    h3.section--header Other Games
+    /! <haml_loud> @data[0][9]</haml_loud> är pokemon_other-games
+    p = @data[0][9]

@@ -1,9 +1,28 @@
 <a href="/"><button>Back</button></a>
 <article>
-    <span>Name: </span> <label for=""><%= @data[0][1] %></label>
-    <span>Number:</span> <label for="">
-        <%= numberExtender(@data[0][0]) %>
-    </label>
-    <span>Description:</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae maiores hic veritatis neque beatae magnam perferendis nemo alias illum similique!</p>
+    <h2><%= @data[0][1] %></h2>
+    <h2><%= numberExtender(@data[0][0]) %></h2>
+    
+    <div class="pokemon--intro"></div>
+    <div class="section">
+        
+        <h3 class="section--header">Data</h3>
+        <!-- <%= @data[0][6]%> är pokemon_data-->
+        <p><%= @data[0][6]%></p>
+    </div>
+    <div class="section">
+        <h3 class="section--header">Origin</h3>
+        <!-- <%= @data[0][7]%> är pokemon_origin-->
+        <p><%= @data[0][7]%></p>    
+    </div>
+    <div class="section">
+        <h3 class="section--header">Apperance</h3>
+        <!-- <%= @data[0][8]%> är pokemon_apperance-->
+        <p><%= @data[0][8]%></p>
+    </div>
+    <div class="section">
+        <h3 class="section--header">Other Games</h3>
+        <!-- <%= @data[0][9]%> är pokemon_other-games-->
+        <p><%= @data[0][9]%></p>    
+    </div>
 </article>

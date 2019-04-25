@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sqlite3'
+require 'slim'
 
 # vid error, utför grej
 # error do
@@ -27,7 +28,7 @@ get('/') do
     @pokeline = db.execute("SELECT id, name from pokemon ORDER BY id")
     p @pokeline
 
-    return erb(:index)
+    return slim(:index)
 end
 
 
@@ -35,7 +36,7 @@ get('/pokemon/:id') do |id|
     db = SQLite3::Database.new('pokemon_db.db')
     @data = db.execute("SELECT * FROM pokemon WHERE id = ?", id)
 
-    return erb(:pokemon)
+    return slim(:pokemon)
 end
 
 
