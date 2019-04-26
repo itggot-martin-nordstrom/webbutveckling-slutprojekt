@@ -1,0 +1,28 @@
+
+.index--article{
+    height: 100vh;
+
+    .number{
+        --font-size: 6rem;
+    
+        // font-size: var(--font-size);
+        // letter-spacing: calc(var(--font-size) / (-5));
+    }
+
+    .sprite{
+        --size: 8rem;
+    }
+
+    .name{
+        --font-size: 3rem;
+    }
+
+    .pokeline{
+        --font-size: 1rem;
+    }
+
+
+    main{
+        justify-content: space-between
+    }
+}

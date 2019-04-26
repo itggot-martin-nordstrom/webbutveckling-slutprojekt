@@ -3,18 +3,21 @@ i.material-icons.menu menu
   /! element[0] nummer utan nollor
   /! element[1] namn
   /! element[4] är ett test med färger, ta bort om det strular eller inte funkar
-  article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[4]};") 
-    img.sprite alt="#" src="/img/pokemon#{element[0]}.png" /
-    h2.name= element[1]
-    h2.number= numberExtender(element[0])
-    h3.pokeline
-      - pokeline = @pokeline[element[2] - 1][1]
-      = pokeline
-      |  line
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quisquam maxime veniam consequatur inventore sequi, excepturi tempora nesciunt ipsa fugit!
-    a href="/pokemon/#{element[0]}" 
-      button= element[1] + " " + numberExtender(element[0])
-  /! name where id is element[2]??? (line_starter)
+  article.index--article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[4]};") 
+    header
+     .header--top
+       h2.number= numberExtender(element[0])
+       img.sprite alt="#" src="/img/pokemon#{element[0]}.png"
+     h2.name= element[1]
+     h3.pokeline
+       - pokeline = @pokeline[element[2] - 1][1]
+       = pokeline
+       |  line
+    main
+     /! element[5] är pokemon intro
+     p = element[5]
+     a href="/pokemon/#{element[0]}" 
+       button= element[1] + " " + numberExtender(element[0])
 ul.scoll-nav
   li item
   li item

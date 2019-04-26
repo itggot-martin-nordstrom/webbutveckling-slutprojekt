@@ -1,0 +1,28 @@
+.pokemon--article{
+    .number{
+        --font-size: 8vw;
+        line-height: var(--font-size);
+    
+        // font-size: var(--font-size);
+        // letter-spacing: calc(var(--font-size) / (-5));
+    }
+    
+    .name{
+        --font-size: 8vw;
+        margin: 0 3vw;
+    }
+    
+    .sprite{
+        --size: 12vw;
+    }
+
+    .pokeline{
+        --font-size: 3vw;
+    }
+
+
+    main{
+        max-width: 400px;
+    }
+    
+}
