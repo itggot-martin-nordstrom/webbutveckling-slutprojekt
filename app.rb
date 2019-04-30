@@ -22,7 +22,7 @@ end
 
 get('/') do
     db = SQLite3::Database.new('pokemon_db.db')
-    @data = db.execute("SELECT * FROM pokemon")
+    @data = db.execute("SELECT id, name, line_starter, background, pokemon_intro FROM pokemon")
 
     # gör inget, men varför? värt att använda flera selektorer från databasen?
     @pokeline = db.execute("SELECT id, name from pokemon ORDER BY id")

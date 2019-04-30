@@ -4,17 +4,50 @@ body, h1, h2, h3, h4, p, ul, li, a{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+a button{
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: var(--font-size);
+    // letter-spacing: calc(var(--font-size));
+
+    border: solid 1px black;
+    background: none;
+    
+    padding: calc(var(--font-size)*0.7) 0 calc(var(--font-size)*0.8);
+    
+    *:first-child{
+        padding-left: calc(var(--font-size)*1.5);
+    }
+    *:last-child{
+        padding-right: calc(var(--font-size)*1.5);
+    }
+    
+    i.material-icons{
+        font-size: var(--font-size);
+        padding-right: calc(var(--font-size)*1);
+    }
+}
+a{
+    text-decoration: none;
+}
 
 article{
     // background-color: var(--article-bg);
     // width: 100%;
     position: relative;
+    box-sizing: border-box;
 
-    padding: 20vh 10vh;
+    padding: 10vh;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 article::before{
     content: '';
@@ -26,9 +59,9 @@ article::before{
     bottom: 0;
     
     z-index: -1;
-
+    
     background-color: var(--article-bg);
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 header{
@@ -53,6 +86,8 @@ header{
 }
 
 .name{
+    position: relative;
+
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
     text-transform: uppercase;
@@ -60,6 +95,20 @@ header{
     font-size: var(--font-size);
 
     margin-bottom: calc(var(--font-size) / 8)
+}
+.name::before{
+    --margin-adjust: 25%;
+
+    content: '';
+    position: absolute;
+    display: block;
+
+    height: 2px;
+    bottom: -1px;
+    right: var(--margin-adjust);
+    left: var(--margin-adjust);
+
+    background-color: black;
 }
 
 .pokeline{
@@ -75,20 +124,28 @@ header{
     width: var(--size);
 }
 
+.pokemon--intro{
+    font-weight: 400;
+    
+    font-size: var(--font-size);
+    // letter-spacing: calc(var(--font-size) / 3);
+}
+
 main{
     width: 100%;
 
     display: flex;
-    align-items: center;
     flex-direction: column;
 
-    *:not(a){
-        width: 100%;
-    }
     a{
         align-self: flex-end;
+        justify-self: flex-end;
     }
 }
+
+// p{
+//     font-size: 0.8rem;
+// }
 
 @import '_index.scss';
 @import '_pokemon.scss';

@@ -1,6 +1,7 @@
 article.pokemon--article style=("--article-bg: #{@data[0][4]};")
   a href="/" 
-   button Back
+   button.button--back
+    p Back
   header
    .header--top
     h2.number = numberExtender(@data[0][0])
@@ -17,18 +18,26 @@ article.pokemon--article style=("--article-bg: #{@data[0][4]};")
   main
    p.pokemon--intro = @data[0][5]
    .section#data
-     h3.section--header Data
+     /! hämta alla med samma line_starter
+     div
+      h3.section--header Data
      /! @data[0][6] är pokemon_data
      p = @data[0][6]
    .section#origin
-     h3.section--header Origin
+     div
+      h3.section--header Origin
      /! @data[0][7] är pokemon_origin
      p = @data[0][7]
    .section#apperance
-     h3.section--header Apperance
+     div
+      h3.section--header Looks
      /! @data[0][8] är pokemon_apperance
      p = @data[0][8]
    .section#other-games
-     h3.section--header Other Games
+     div
+      h3.section--header Other Games
      /! @data[0][9] är pokemon_other-games
      p = @data[0][9]
+  a.button--to_top  
+   button 
+    p To top

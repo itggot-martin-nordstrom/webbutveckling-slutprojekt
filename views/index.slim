@@ -1,9 +1,10 @@
-i.material-icons.menu menu
+/ i.material-icons.menu menu
 - @data.each do |element|
   /! element[0] nummer utan nollor
   /! element[1] namn
   /! element[4] är ett test med färger, ta bort om det strular eller inte funkar
   article.index--article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[4]};") 
+    i.material-icons.button--navigation keyboard_arrow_up
     header
      .header--top
        h2.number= numberExtender(element[0])
@@ -15,9 +16,12 @@ i.material-icons.menu menu
        |  line
     main
      /! element[5] är pokemon intro
-     p = element[5]
+     p.pokemon--intro = element[5]
      a href="/pokemon/#{element[0]}" 
-       button= element[1] + " " + numberExtender(element[0])
+       button 
+         p = element[1] + " " + numberExtender(element[0])
+         i.material-icons keyboard_arrow_right
+    i.material-icons.button--navigation keyboard_arrow_down
 ul.scoll-nav
   li item
   li item

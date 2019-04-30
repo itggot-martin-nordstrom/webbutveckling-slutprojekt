@@ -1,3 +1,11 @@
+console.log(document.querySelector(".button--to_top"))
+
+function scrollTop(){
+    document.querySelector("article").scrollIntoView({
+        behavior: 'smooth'
+    })
+}
+document.querySelector(".button--to_top").addEventListener("click", scrollTop)
 
 
 // function scrollMove(currentId){

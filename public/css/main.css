@@ -3,12 +3,35 @@ body, h1, h2, h3, h4, p, ul, li, a {
   color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
+a button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: var(--font-size);
+  border: solid 1px black;
+  background: none;
+  padding: calc(var(--font-size)*0.7) 0 calc(var(--font-size)*0.8); }
+  a button *:first-child {
+    padding-left: calc(var(--font-size)*1.5); }
+  a button *:last-child {
+    padding-right: calc(var(--font-size)*1.5); }
+  a button i.material-icons {
+    font-size: var(--font-size);
+    padding-right: calc(var(--font-size)*1); }
+
+a {
+  text-decoration: none; }
+
 article {
   position: relative;
-  padding: 20vh 10vh;
+  box-sizing: border-box;
+  padding: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 article::before {
   content: '';
@@ -20,7 +43,7 @@ article::before {
   bottom: 0;
   z-index: -1;
   background-color: var(--article-bg);
-  opacity: 0.2; }
+  opacity: 0.3; }
 
 header {
   display: flex;
@@ -41,11 +64,23 @@ header {
   letter-spacing: calc(var(--font-size) / (-5)); }
 
 .name {
+  position: relative;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 100;
   text-transform: uppercase;
   font-size: var(--font-size);
   margin-bottom: calc(var(--font-size) / 8); }
+
+.name::before {
+  --margin-adjust: 25%;
+  content: '';
+  position: absolute;
+  display: block;
+  height: 2px;
+  bottom: -1px;
+  right: var(--margin-adjust);
+  left: var(--margin-adjust);
+  background-color: black; }
 
 .pokeline {
   font-weight: 100;
@@ -57,18 +92,28 @@ header {
   height: var(--size);
   width: var(--size); }
 
+.pokemon--intro {
+  font-weight: 400;
+  font-size: var(--font-size); }
+
 main {
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column; }
-  main *:not(a) {
-    width: 100%; }
   main a {
-    align-self: flex-end; }
+    align-self: flex-end;
+    justify-self: flex-end; }
 
 .index--article {
   height: 100vh; }
+  .index--article .button--navigation {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  .index--article .button--navigation:first-of-type {
+    top: 20px; }
+  .index--article .button--navigation:last-of-type {
+    bottom: 20px; }
   .index--article .number {
     --font-size: 6rem; }
   .index--article .sprite {
@@ -76,21 +121,52 @@ main {
   .index--article .name {
     --font-size: 3rem; }
   .index--article .pokeline {
-    --font-size: 1rem; }
+    --font-size: 1.3rem; }
+  .index--article .pokemon--intro {
+    --font-size: 0.9rem; }
   .index--article main {
-    justify-content: space-between; }
+    align-items: center; }
+    .index--article main a button {
+      margin-top: 20px;
+      --font-size: 0.9rem; }
 
-.pokemon--article .number {
-  --font-size: 8vw;
-  line-height: var(--font-size); }
-.pokemon--article .name {
-  --font-size: 8vw;
-  margin: 0 3vw; }
-.pokemon--article .sprite {
-  --size: 12vw; }
-.pokemon--article .pokeline {
-  --font-size: 3vw; }
-.pokemon--article main {
-  max-width: 400px; }
+.pokemon--article {
+  height: auto;
+  padding: 10vw 8vw; }
+  .pokemon--article a button {
+    --font-size: 1rem; }
+    .pokemon--article a button.button--back {
+      --font-size: 0.7rem;
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem; }
+  .pokemon--article .number {
+    --font-size: 10vw;
+    line-height: var(--font-size); }
+  .pokemon--article .name {
+    --font-size: 10vw;
+    margin: 0 3vw; }
+  .pokemon--article .sprite {
+    --size: 14vw; }
+  .pokemon--article .pokeline {
+    --font-size: 4vw; }
+  .pokemon--article .pokemon--intro {
+    --font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem; }
+  .pokemon--article .section {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 10px;
+    margin-bottom: 1rem; }
+    .pokemon--article .section .section--header {
+      position: sticky;
+      top: 10px;
+      font-size: 1.2rem;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase; }
+    .pokemon--article .section p {
+      font-size: 0.9rem;
+      text-align: justify; }
 
 /*# sourceMappingURL=main.css.map */
