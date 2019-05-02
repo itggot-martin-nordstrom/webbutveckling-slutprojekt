@@ -34,6 +34,19 @@
         --font-size: 4vw;
     }
 
+    .evolutions--container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 20px;
+
+        .sprite{
+            --size: 20vw;
+        }
+    }
+
     .pokemon--intro{
         --font-size: 0.9rem;
         font-weight: 700;

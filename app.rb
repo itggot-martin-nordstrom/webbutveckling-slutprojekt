@@ -24,9 +24,7 @@ get('/') do
     db = SQLite3::Database.new('pokemon_db.db')
     @data = db.execute("SELECT id, name, line_starter, background, pokemon_intro FROM pokemon")
 
-    # gör inget, men varför? värt att använda flera selektorer från databasen?
     @pokeline = db.execute("SELECT id, name from pokemon ORDER BY id")
-    p @pokeline
     
     return slim(:index)
 end
@@ -37,6 +35,8 @@ get('/pokemon/:id') do |id|
     @data = db.execute("SELECT * FROM pokemon WHERE id = ?", id)
     
     @pokeline = db.execute("SELECT id, name from pokemon ORDER BY id")
+    @evolutions = db.execute("SELECT id FROM pokemon WHERE line_starter = ?", @data[0][2])
+    # @evolutions = db.execute("SELECT id FROM pokemon")
     return slim(:pokemon)
 end
 

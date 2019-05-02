@@ -1,18 +1,30 @@
+.button--navigation{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    transform: scale(1);
+    transition: transform 250ms ease-out;
+
+    &.hidden{
+        transform: scale(0);
+    }
+}
+.button--navigation:first-of-type{
+    top: 20px;
+}
+.button--navigation:last-of-type{
+    bottom: 20px;
+}
+
+.index--wrapper{
+    height: 100vh;
+    overflow: hidden;
+}
 
 .index--article{
     height: 100vh;
-
-    .button--navigation{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .button--navigation:first-of-type{
-        top: 20px;
-    }
-    .button--navigation:last-of-type{
-        bottom: 20px;
-    }
 
     .number{
         --font-size: 6rem;

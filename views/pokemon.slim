@@ -16,6 +16,9 @@ article.pokemon--article style=("--article-bg: #{@data[0][4]};")
     |  line
     /! @data[0][5] är pokemon_intro
   main
+   .evolutions--container
+      - @evolutions.each_with_index do |u, index|
+        img.sprite alt="#" src="/img/pokemon#{u[0]}.png"
    p.pokemon--intro = @data[0][5]
    .section#data
      /! hämta alla med samma line_starter
@@ -40,4 +43,5 @@ article.pokemon--article style=("--article-bg: #{@data[0][4]};")
      p = @data[0][9]
   a.button--to_top  
    button 
-    p To top
+    p Back to top
+    i.material-icons keyboard_arrow_up

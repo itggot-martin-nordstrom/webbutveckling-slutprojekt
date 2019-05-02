@@ -1,29 +1,31 @@
+i.material-icons.button--navigation.button--navigation-up onclick="indexNav(-1)" keyboard_arrow_up
+/ p = @data
 / i.material-icons.menu menu
-- @data.each do |element|
-  /! element[0] nummer utan nollor
-  /! element[1] namn
-  /! element[4] är ett test med färger, ta bort om det strular eller inte funkar
-  article.index--article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[4]};") 
-    i.material-icons.button--navigation keyboard_arrow_up
-    header
-     .header--top
-       h2.number= numberExtender(element[0])
-       img.sprite alt="#" src="/img/pokemon#{element[0]}.png"
-     h2.name= element[1]
-     h3.pokeline
-       - pokeline = @pokeline[element[2] - 1][1]
-       = pokeline
-       |  line
-    main
-     /! element[5] är pokemon intro
-     p.pokemon--intro = element[5]
-     a href="/pokemon/#{element[0]}" 
-       button 
-         p = element[1] + " " + numberExtender(element[0])
-         i.material-icons keyboard_arrow_right
-    i.material-icons.button--navigation keyboard_arrow_down
-ul.scoll-nav
-  li item
-  li item
-  li item
-  li item
+div.index--wrapper
+ - @data.each do |element|
+   /! element[0] nummer utan nollor
+   /! element[1] namn
+   /! element[4] är ett test med färger, ta bort om det strular eller inte funkar
+   article.index--article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[3]};") 
+     header
+      .header--top
+        h2.number= numberExtender(element[0])
+        img.sprite alt="#" src="/img/pokemon#{element[0]}.png"
+      h2.name= element[1]
+      h3.pokeline
+        - pokeline = @pokeline[element[2] - 1][1]
+        = pokeline
+        |  line
+     main
+      /! element[5] är pokemon intro
+      p.pokemon--intro = element[4]
+      a href="/pokemon/#{element[0]}" 
+        button 
+          p = element[1] + " " + numberExtender(element[0])
+          i.material-icons keyboard_arrow_right
+/ ul.scoll-nav
+/   li item
+/   li item
+/   li item
+/   li item
+i.material-icons.button--navigation.button--navigation-down onclick="indexNav(1)" keyboard_arrow_down

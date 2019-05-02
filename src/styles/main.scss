@@ -61,7 +61,7 @@ article::before{
     z-index: -1;
     
     background-color: var(--article-bg);
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 header{
@@ -103,7 +103,7 @@ header{
     position: absolute;
     display: block;
 
-    height: 2px;
+    height: 1px;
     bottom: -1px;
     right: var(--margin-adjust);
     left: var(--margin-adjust);
