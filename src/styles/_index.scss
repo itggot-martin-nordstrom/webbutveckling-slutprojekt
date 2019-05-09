@@ -47,6 +47,8 @@
 
     .pokemon--intro{
         --font-size: 0.9rem;
+        height: 0%;
+        overflow: hidden;
     }
 
     main{
@@ -77,6 +79,38 @@
 
         &.scroll-nav-active{
             font-size: 1.4rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .index--article{
+        padding: 10vh calc((100vw - 400px) / 2)
+    }
+}
+@media only screen and (min-width: 700px){
+    .index--article{
+        padding: 10vh;
+        
+        a{
+            align-self: center;
+        }
+        .pokemon--intro{
+            height: 100%;
+            overflow: visible;
+        }
+
+        .header--top{
+            position: relative;
+            // flex-direction: column;
+            .sprite{
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(4);
+                opacity: 0.3;
+                z-index: -10;
+            }
         }
     }
 }

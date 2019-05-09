@@ -20,6 +20,8 @@ a button {
     padding-right: calc(var(--font-size)*1.5); }
   a button i.material-icons {
     font-size: var(--font-size); }
+  a button i.material-icons:first-child {
+    padding-left: calc((var(--font-size)*1)); }
   a button i.material-icons:last-child {
     padding-right: calc(var(--font-size)*1); }
 
@@ -139,7 +141,9 @@ main {
   .index--article .pokeline {
     --font-size: 1.3rem; }
   .index--article .pokemon--intro {
-    --font-size: 0.9rem; }
+    --font-size: 0.9rem;
+    height: 0%;
+    overflow: hidden; }
   .index--article main {
     align-items: center; }
     .index--article main a button {
@@ -158,13 +162,32 @@ main {
     .scroll-nav li.scroll-nav-active {
       font-size: 1.4rem; }
 
+@media only screen and (min-width: 500px) {
+  .index--article {
+    padding: 10vh calc((100vw - 400px) / 2); } }
+@media only screen and (min-width: 700px) {
+  .index--article {
+    padding: 10vh; }
+    .index--article a {
+      align-self: center; }
+    .index--article .pokemon--intro {
+      height: 100%;
+      overflow: visible; }
+    .index--article .header--top {
+      position: relative; }
+      .index--article .header--top .sprite {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0.3;
+        z-index: -10; } }
 .pokemon--article {
   height: auto;
   padding: 10vw 8vw; }
   .pokemon--article a button {
     --font-size: 1rem; }
     .pokemon--article a button.button--back {
-      --font-size: 0.7rem;
       position: absolute;
       top: 0.6rem;
       left: 0.6rem; }
@@ -251,6 +274,12 @@ main {
       .pokemon--article .section .stats--line h2 {
         font-weight: 400; }
 
+@media only screen and (min-width: 600px) {
+  .pokemon--article a button {
+    --font-size: 1rem; }
+    .pokemon--article a button.button--back {
+      top: 1rem;
+      left: 1rem; } }
 @keyframes statsAnimation {
   0% {
     transform: scaleX(0); }
