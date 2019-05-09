@@ -1,31 +1,54 @@
 article.pokemon--article style=("--article-bg: #{@data[0][4]};")
   a href="/" 
-   button.button--back
-    p Back
+    button.button--back
+      i.material-icons keyboard_arrow_left
+      p Back
   header
-   .header--top
-    h2.number = numberExtender(@data[0][0])
-    h2.name = @data[0][1]
-    img.sprite alt="#" src="/img/pokemon#{@data[0][0]}.png"  
-   h3.pokeline
-    /! @data[0][2] är line starter
-    /! -1 för indexet, vilket returnerar en array av ex. [1, "Bulbasaur"]
-    /! det andra indexet [1] är för att plocka "Bulbasaur" ur den arrayen
-    - pokeline = @pokeline[@data[0][2] - 1][1]
-    = pokeline
-    |  line
+    .header--top
+      h2.number style=("--color: #{@data[0][4]}") = numberExtender(@data[0][0])
+      h2.name = @data[0][1]
+      img.sprite alt="#" src="/img/pokemon#{@data[0][0]}.png"  
+    h3.pokeline
+      /! @data[0][2] är line starter
+      /! -1 för indexet, vilket returnerar en array av ex. [1, "Bulbasaur"]
+      /! det andra indexet [1] är för att plocka "Bulbasaur" ur den arrayen
+      - pokeline = @pokeline[@data[0][2] - 1][1]
+      = pokeline
+      |  line
     /! @data[0][5] är pokemon_intro
   main
    .evolutions--container
-      - @evolutions.each_with_index do |u, index|
-        img.sprite alt="#" src="/img/pokemon#{u[0]}.png"
+      - @evolutions.each do |u|
+        a href="/pokemon/#{u[0]}"
+          img.sprite alt="#" src="/img/pokemon#{u[0]}.png"
    p.pokemon--intro = @data[0][5]
    .section#data
-     /! hämta alla med samma line_starter
-     div
-      h3.section--header Data
-     /! @data[0][6] är pokemon_data
-     p = @data[0][6]
+      / .stats--headers--holder
+      /   p.stats--header = hp 
+      /   p.stats--header = h 
+      /   p.stats--header = hp
+      /   p.stats--header = hp
+      /   p.stats--header = hp
+      /   p.stats--header = hp
+      .stats
+        ul
+          li HP
+          li Attack
+          li Defence
+          li Sp. Atk
+          li Sp. Def
+          li Speed
+        .stats--holder
+          - @stats.each_with_index do |stat|
+            .stats--line--holder
+              .stats--line stat=("#{stat / 1.2}")
+                h2.stats--value = ("#{stat}")
+          / p = ("#{stat / 2}")
+          /! hämta alla med samma line_starter
+      div
+        h3.section--header Data
+      /! @data[0][6] är pokemon_data
+      p = @data[0][6]
    .section#origin
      div
       h3.section--header Origin

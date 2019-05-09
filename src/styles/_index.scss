@@ -60,4 +60,23 @@
             --font-size: 0.9rem;
         }
     }
+
+}
+
+.scroll-nav{
+    list-style: none;
+    position: fixed;
+    bottom: 10vw;
+    left: 4vw;
+
+    padding: 0;
+
+    li{
+        padding: 0.3rem 0;
+        font-weight: 600;
+
+        &.scroll-nav-active{
+            font-size: 1.4rem;
+        }
+    }
 }

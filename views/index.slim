@@ -6,13 +6,13 @@ div.index--wrapper
    /! element[0] nummer utan nollor
    /! element[1] namn
    /! element[4] är ett test med färger, ta bort om det strular eller inte funkar
-   article.index--article id="pokemon_article#{element[0]}" onscroll=("scrollMove( #{element[0]} )") style=("--article-bg: #{element[3]};") 
+   article.index--article id="pokemon_article#{element[0]}" style=("--article-bg: #{element[3]};") 
      header
       .header--top
-        h2.number= numberExtender(element[0])
+        h2.number style=("--color: #{element[3]}") = numberExtender(element[0])
         img.sprite alt="#" src="/img/pokemon#{element[0]}.png"
       h2.name= element[1]
-      h3.pokeline
+      h3.pokeline 
         - pokeline = @pokeline[element[2] - 1][1]
         = pokeline
         |  line
@@ -23,9 +23,9 @@ div.index--wrapper
         button 
           p = element[1] + " " + numberExtender(element[0])
           i.material-icons keyboard_arrow_right
-/ ul.scoll-nav
-/   li item
-/   li item
-/   li item
-/   li item
+/ ul.scroll-nav
+/   li id="scroll--id-1" onlick="indexNav(1)" #001
+/   li id="scroll--id-51" onlick="indexNav(1051)" #051
+/   li id="scroll--id-101" onlick="indexNav(1101)" #101
+/   li id="scroll--id-151" onlick="indexNav(1151)" #151
 i.material-icons.button--navigation.button--navigation-down onclick="indexNav(1)" keyboard_arrow_down

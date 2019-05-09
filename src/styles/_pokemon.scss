@@ -16,6 +16,8 @@
     .number{
         --font-size: 10vw;
         line-height: var(--font-size);
+        -webkit-text-stroke-width: 2px;
+        
     
         // font-size: var(--font-size);
         // letter-spacing: calc(var(--font-size) / (-5));
@@ -74,6 +76,93 @@
             font-size: 0.9rem;
             text-align: justify;
         }
+
+        .stats{
+            margin: 10px 0;
+            // padding: 10px;
+            // border-radius: 10px;
+            // box-shadow: 0 3px 9px rgba($color: #000000, $alpha: 0.5);
+            // background-color: white;
+            // border: 2px black solid;
+            grid-column: span 2;
+
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            // background-color: red;   
+        }
+
+        .stats--line--holder{
+            background: #DDD;
+
+
+            &:nth-child(1) *{
+                background-color: rgb(255, 60, 60);
+            }
+            &:nth-child(2) *{
+                background-color: rgb(255, 189, 67);
+                animation-delay: 100ms;
+            }
+            &:nth-child(3) *{
+                background-color: rgb(255, 252, 74);
+                animation-delay: 200ms;
+            }
+            &:nth-child(4) *{
+                background-color: rgb(74, 122, 255);
+                animation-delay: 300ms;
+            }
+            &:nth-child(5) *{
+                background-color: rgb(72, 199, 72);
+                animation-delay: 400ms;
+            }
+            &:nth-child(6) *{
+                background-color: rgb(255, 77, 166);
+                animation-delay: 500ms;
+            }
+
+            &:nth-child(2n){
+                background-color: #D6D6D6;
+            }
+        }
+        
+        ul{
+            padding: 0 5px 0 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            li{
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+        .stats--value{
+            font-size: 1rem;
+        }
+        
+        .stats--line{
+            position: relative;
+            padding: 0.2rem 0.5rem;
+            transform: scaleX(0);
+            
+            transform-origin: left;
+            animation: statsAnimation 1000ms ease-out forwards;
+            
+            h2{
+                font-weight: 400;
+                // color: white;
+            }
+        }
     }
     
+}
+
+@keyframes statsAnimation{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
 }

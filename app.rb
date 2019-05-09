@@ -37,6 +37,7 @@ get('/pokemon/:id') do |id|
     @pokeline = db.execute("SELECT id, name from pokemon ORDER BY id")
     @evolutions = db.execute("SELECT id FROM pokemon WHERE line_starter = ?", @data[0][2])
     # @evolutions = db.execute("SELECT id FROM pokemon")
+    @stats = db.execute("SELECT stats_hp, stats_atk, stats_def, stats_spatk, stats_spdef, stats_spd FROM pokemon WHERE id = ?", id)[0]
     return slim(:pokemon)
 end
 
